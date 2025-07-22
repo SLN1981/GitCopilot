@@ -1,0 +1,21 @@
+meta {
+  name: Cancel Trip
+  type: http
+  seq: 13
+}
+
+put {
+  url: http://localhost:5000/api/bookings/{{booking_id}}/cancel
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "reason": "Passenger no-show"
+  }
+}

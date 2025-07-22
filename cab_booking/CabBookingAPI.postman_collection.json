@@ -1,0 +1,234 @@
+{
+  "info": {
+    "_postman_id": "cab-booking-api-collection",
+    "name": "Cab Booking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection for Cab Booking REST API"
+  },
+  "item": [
+    {
+      "name": "Status Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/status",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "status"]
+        }
+      }
+    },
+    {
+      "name": "Create Passenger",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"phone\": \"1234567890\",\n  \"email\": \"john@example.com\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/passengers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "passengers"]
+        }
+      }
+    },
+    {
+      "name": "Get Passenger",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/passengers/{{passenger_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "passengers", "{{passenger_id}}"]
+        }
+      }
+    },
+    {
+      "name": "Create Driver",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Jane Smith\",\n  \"phone\": \"9876543210\",\n  \"email\": \"jane@example.com\",\n  \"license_number\": \"DL123456\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/drivers",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "drivers"]
+        }
+      }
+    },
+    {
+      "name": "Get Driver",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/drivers/{{driver_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "drivers", "{{driver_id}}"]
+        }
+      }
+    },
+    {
+      "name": "Create Car",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"Prius\",\n  \"make\": \"Toyota\",\n  \"year\": 2020,\n  \"license_plate\": \"ABC123\",\n  \"capacity\": 4,\n  \"car_type\": \"economy\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/cars",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "cars"]
+        }
+      }
+    },
+    {
+      "name": "Get Car",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/cars/{{car_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "cars", "{{car_id}}"]
+        }
+      }
+    },
+    {
+      "name": "Create Booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"passenger_id\": \"{{passenger_id}}\",\n  \"from_location\": \"123 Main St\",\n  \"to_location\": \"456 Park Ave\",\n  \"estimated_distance_km\": 10,\n  \"estimated_duration_minutes\": 30\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/bookings",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "bookings"]
+        }
+      }
+    },
+    {
+      "name": "Get Booking",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/bookings/{{booking_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "bookings", "{{booking_id}}"]
+        }
+      }
+    },
+    {
+      "name": "Assign Driver to Booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"driver_id\": \"{{driver_id}}\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/bookings/{{booking_id}}/assign-driver",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "bookings", "{{booking_id}}", "assign-driver"]
+        }
+      }
+    },
+    {
+      "name": "Start Trip",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/bookings/{{booking_id}}/start",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "bookings", "{{booking_id}}", "start"]
+        }
+      }
+    },
+    {
+      "name": "Complete Trip",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"actual_distance_km\": 10,\n  \"actual_duration_minutes\": 30\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/bookings/{{booking_id}}/complete",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "bookings", "{{booking_id}}", "complete"]
+        }
+      }
+    },
+    {
+      "name": "Cancel Trip",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reason\": \"Passenger no-show\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/bookings/{{booking_id}}/cancel",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "bookings", "{{booking_id}}", "cancel"]
+        }
+      }
+    }
+  ]
+}

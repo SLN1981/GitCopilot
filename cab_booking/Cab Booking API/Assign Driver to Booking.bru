@@ -1,0 +1,21 @@
+meta {
+  name: Assign Driver to Booking
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:5000/api/bookings/{{booking_id}}/assign-driver
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "driver_id": "{{driver_id}}"
+  }
+}

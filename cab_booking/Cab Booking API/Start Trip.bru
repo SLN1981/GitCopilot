@@ -1,0 +1,11 @@
+meta {
+  name: Start Trip
+  type: http
+  seq: 11
+}
+
+put {
+  url: http://localhost:5000/api/bookings/{{booking_id}}/start
+  body: none
+  auth: none
+}

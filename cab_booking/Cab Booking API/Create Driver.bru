@@ -1,0 +1,24 @@
+meta {
+  name: Create Driver
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:5000/api/drivers
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Jane Smith",
+    "phone": "9876543210",
+    "email": "jane@example.com",
+    "license_number": "DL123456"
+  }
+}

@@ -1,0 +1,25 @@
+meta {
+  name: Create Booking
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:5000/api/bookings
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "passenger_id": "{{passenger_id}}",
+    "from_location": "123 Main St",
+    "to_location": "456 Park Ave",
+    "estimated_distance_km": 10,
+    "estimated_duration_minutes": 30
+  }
+}

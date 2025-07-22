@@ -1,0 +1,26 @@
+meta {
+  name: Create Car
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:5000/api/cars
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "model": "Prius",
+    "make": "Toyota",
+    "year": 2020,
+    "license_plate": "ABC123",
+    "capacity": 4,
+    "car_type": "economy"
+  }
+}

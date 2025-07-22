@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: cab_booking
+Version: 0.1.0
+Summary: A cab booking system REST API
+Author: Cab Booking System
+Author-email: example@example.com
+Keywords: cab,taxi,booking,api
+Requires-Python: >=3.6
+Requires-Dist: flask>=2.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

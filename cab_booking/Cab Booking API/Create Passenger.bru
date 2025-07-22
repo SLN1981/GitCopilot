@@ -1,0 +1,23 @@
+meta {
+  name: Create Passenger
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:5000/api/passengers
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "John Doe",
+    "phone": "1234567890",
+    "email": "john@example.com"
+  }
+}

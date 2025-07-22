@@ -1,0 +1,11 @@
+meta {
+  name: Get Car
+  type: http
+  seq: 7
+}
+
+get {
+  url: http://localhost:5000/api/cars/{{car_id}}
+  body: none
+  auth: none
+}
